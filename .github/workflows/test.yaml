@@ -8,12 +8,15 @@ jobs:
     builds-app: # this is our first job
         runs-on: ubuntu-latest # this is the underlying image on which your action runs
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v2
+            - uses: actions/checkout@v2 # this built in action will checkout the repo and clone it on our os in this case ubuntu
+            - uses: actions/setup-node@v2 # this will install node js on that os with version 17
               with:
                 node-version: '17'
-            - name: install dependencies
+            #this task will install all dependencies required by project
+            - name: install dependencies 
               run: yarn install
+            # this task will build the project
             - name: build the project
               run: yarn build
+            # this will return list of all the files/folders in that project folder
             - run: ls
