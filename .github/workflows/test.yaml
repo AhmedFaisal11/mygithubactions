@@ -5,12 +5,8 @@ name: my first github action
 on: push
 #the last but not the least thing github action require is the jobs it need to perform on a certain action
 jobs:
-    print-hello-world: # this is our first job
+    builds-app: # this is our first job
         runs-on: ubuntu-latest # this is the underlying image on which your action runs
-        steps:      # in the single job you can have multiple steps , but make sure its an array because you want to execute these steps in order
-            - run: echo "Hello world!!!!!!!!!"
-            
-    print-hello-world2:
-        runs-on: ubuntu-latest
         steps:
-            - run: echo "This is second Job"
+            - uses: actions/checkout@v2
+            - run: tree
