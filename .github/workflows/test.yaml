@@ -20,3 +20,8 @@ jobs:
               run: yarn build
             # this will return list of all the files/folders in that project folder
             - run: ls
+    second-job:
+        needs: builds-app # this job is dependent on builds-app because in some cases you want to run second after completing first you dont want it to run parallel that why we use needs keyword for making a job dependent on another job in this case build-app
+        runs-on: ubuntu-latest
+        steps:
+          - run: echo "Hello world"
