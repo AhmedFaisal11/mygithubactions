@@ -1,0 +1,11 @@
+# firstly github action require a name for a particular action
+name: my first github action
+# this line will tell github action that when somebody pushes into github repo just automatically run this action
+# you can also define other on actions for example on : pull_requests 
+on: push
+#the last but not the least thing github action require is the jobs it need to perform on a certain action
+jobs:
+    print-hello-world: # this is our first job
+        runs-on: ubuntu-latest # this is the underlying image on which your action runs
+        steps:      # in the single job you can have multiple steps , but make sure its an array because you want to execute these steps in order
+            - run: echo "Hello world!!!!!!!!!"
