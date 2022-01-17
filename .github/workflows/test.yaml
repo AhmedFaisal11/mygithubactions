@@ -9,3 +9,8 @@ jobs:
         runs-on: ubuntu-latest # this is the underlying image on which your action runs
         steps:      # in the single job you can have multiple steps , but make sure its an array because you want to execute these steps in order
             - run: echo "Hello world!!!!!!!!!"
+            
+    print-hello-world2:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "This is second Job"
